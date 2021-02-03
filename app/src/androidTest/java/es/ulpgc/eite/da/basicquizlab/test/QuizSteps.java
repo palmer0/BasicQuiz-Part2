@@ -27,7 +27,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 public class QuizSteps {
 
   @Rule
-  public ActivityTestRule<MainActivity> questionTestRule =
+  public ActivityTestRule<MainActivity> testRule =
       new ActivityTestRule(MainActivity.class, true, false);
 
   private Activity activity;
@@ -35,13 +35,13 @@ public class QuizSteps {
 
   @Before("@quiz-feature")
   public void setUp() {
-    questionTestRule.launchActivity(new Intent());
-    activity = questionTestRule.getActivity();
+    testRule.launchActivity(new Intent());
+    activity = testRule.getActivity();
   }
 
   @After("@quiz-feature")
   public void tearDown() {
-    questionTestRule.finishActivity();
+    testRule.finishActivity();
   }
 
   
