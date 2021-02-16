@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+  //TODO: refactorizar en un método este codigo repetido
   private void updateLayoutContent() {
     questionText.setText(questionArray[questionIndex]);
     replyText.setText(R.string.empty_text);
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+  //TODO: impedir que podamos hacer click en el boton
+  // si ya hemos contestado a la pregunta
   private void buttonClicked(int id) {
 
     if(nextButtonEnabled) {
@@ -120,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
     // no implementado
   }
 
+  //TODO: impedir que podamos hacer click en el boton
+  // si aun no hemos contestado a la pregunta
   private void nextButtonClicked() {
 
     if(!nextButtonEnabled) {
@@ -139,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+  //TODO: refactorizar en un método este codigo
+  // por si queremos implementar otras opciones posibles
   private void checkIndexData() {
 
     // hacemos que si llegamos al final del quiz
