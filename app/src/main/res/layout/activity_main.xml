@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="TextView"
+        android:text="@string/empty_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,10 +30,9 @@
 
         <Button
             android:id="@+id/trueButton"
-            android:onClick="onButtonClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/true_button_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Space
@@ -43,10 +42,9 @@
 
         <Button
             android:id="@+id/falseButton"
-            android:onClick="onButtonClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/false_button_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
     </LinearLayout>
 
@@ -55,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="TextView"
+        android:text="@string/empty_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,25 +73,24 @@
 
         <Button
             android:id="@+id/nextButton"
-            android:onClick="onButtonClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/next_button_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Next" />
 
         <Space
+            android:visibility="gone"
             android:layout_width="36dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <Button
             android:id="@+id/cheatButton"
-            android:visibility="visible"
-            android:onClick="onButtonClick"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/cheat_button_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Cheat" />
     </LinearLayout>
