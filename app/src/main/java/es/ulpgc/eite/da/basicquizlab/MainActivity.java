@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
     initLayoutContent();
     enableLayoutButtons();
 
-    //updateLayoutContent();
-
   }
 
 
@@ -49,20 +47,6 @@ public class MainActivity extends AppCompatActivity {
     questionText = findViewById(R.id.questionText);
     replyText = findViewById(R.id.replyText);
   }
-
-//  private void initLayoutContent() {
-//    falseButton.setText(R.string.false_button_text);
-//    trueButton.setText(R.string.true_button_text);
-//    nextButton.setText(R.string.next_button_text);
-//    cheatButton.setText(R.string.cheat_button_text);
-//
-//  }
-//
-//  //TODO: refactorizar en un método este codigo repetido
-//  private void updateLayoutContent() {
-//    questionText.setText(questionArray[questionIndex]);
-//    replyText.setText(R.string.empty_text);
-//  }
 
 
   private void initLayoutContent() {
@@ -106,42 +90,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
-
-//  public void onButtonClick(View view) {
-//
-//    switch (view.getId()) {
-//      case R.id.falseButton:
-//      case R.id.trueButton:
-//        buttonClicked(view.getId());
-//        break;
-//      case R.id.nextButton:
-//        nextButtonClicked();
-//        break;
-//      case R.id.cheatButton:
-//        cheatButtonClicked();
-//    }
-//
-//  }
-
-//  //TODO: impedir que podamos hacer click en el boton
-//  // si ya hemos contestado a la pregunta
-//  private void buttonClicked(int id) {
-//
-//    if(nextButtonEnabled) {
-//      return;
-//    }
-//
-//    switch (id) {
-//      case R.id.falseButton:
-//        onFalseButtonClicked();
-//        break;
-//      case R.id.trueButton:
-//        onTrueButtonClicked();
-//    }
-//
-//    nextButtonEnabled = true;
-//  }
-
+  //TODO: impedir que podamos hacer click en el boton
+  // si ya hemos contestado a la pregunta
   private void onTrueButtonClicked(View v) {
 
     if(nextButtonEnabled) {
@@ -157,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
     nextButtonEnabled = true;
   }
 
+  //TODO: impedir que podamos hacer click en el boton
+  // si ya hemos contestado a la pregunta
   private void onFalseButtonClicked(View v) {
 
     if(nextButtonEnabled) {
@@ -193,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
     checkIndexData();
 
     if(questionIndex < questionArray.length) {
-      //updateLayoutContent();
       initLayoutContent();
     }
 
