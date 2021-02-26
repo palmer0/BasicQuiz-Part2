@@ -59,7 +59,7 @@ public class QuizSteps {
   @And("^ocultar resultado$")
   public void ocultarResultado() {
     //onView(withId(R.id.replyText)).check(matches(not(isDisplayed())));
-    onView(withId(R.id.replyText)).check(matches(isDisplayed()));
+    //onView(withId(R.id.replyText)).check(matches(isDisplayed()));
     //onView(withId(R.id.replyText)).check(matches(withText("???")));
     onView(withId(R.id.replyText))
         .check(matches(withText(activity.getString(R.string.empty_text))));
@@ -91,7 +91,7 @@ public class QuizSteps {
 
   @And("^ocultar respuesta$")
   public void ocultarRespuesta() {
-    onView(withId(R.id.answerText)).check(matches(isDisplayed()));
+    //onView(withId(R.id.answerText)).check(matches(isDisplayed()));
     //onView(withId(R.id.answerText)).check(matches(withText("???")));
     onView(withId(R.id.answerText))
         .check(matches(withText(activity.getString(R.string.empty_text))));
