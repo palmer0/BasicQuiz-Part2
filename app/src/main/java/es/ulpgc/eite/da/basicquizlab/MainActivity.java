@@ -28,15 +28,12 @@ public class MainActivity extends AppCompatActivity {
     linkLayoutComponents();
     initLayoutContent();
     enableLayoutButtons();
-
   }
-
 
   private void initLayoutData() {
     questionArray=getResources().getStringArray(R.array.question_array);
     replyArray=getResources().getIntArray(R.array.reply_array);
   }
-
 
   private void linkLayoutComponents() {
     falseButton = findViewById(R.id.falseButton);
@@ -47,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     questionText = findViewById(R.id.questionText);
     replyText = findViewById(R.id.replyText);
   }
-
 
   private void initLayoutContent() {
     questionText.setText(questionArray[questionIndex]);
@@ -88,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
       }
     });
   }
-
 
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
@@ -147,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
     if(questionIndex < questionArray.length) {
       initLayoutContent();
     }
-
   }
 
   //TODO: refactorizar en un método este codigo
@@ -159,7 +153,5 @@ public class MainActivity extends AppCompatActivity {
     if(questionIndex == questionArray.length) {
       questionIndex=0;
     }
-
   }
-
 }
