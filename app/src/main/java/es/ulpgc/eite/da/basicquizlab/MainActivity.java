@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     nextButtonEnabled = true;
   }
 
+
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
   private void onFalseButtonClicked(View v) {
