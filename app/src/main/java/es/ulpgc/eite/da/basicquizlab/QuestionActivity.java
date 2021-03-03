@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionActivity extends AppCompatActivity {
 
+  public static final int CHEAT_REQUEST = 1;
+
   private Button falseButton, trueButton,cheatButton, nextButton;
   private TextView questionText, replyText;
 
@@ -62,7 +64,7 @@ public class QuestionActivity extends AppCompatActivity {
 
       @Override
       public void onClick(View v) {
-        onTrueButtonClicked(v);
+        onTrueButtonClicked();
       }
     });
 
@@ -70,7 +72,7 @@ public class QuestionActivity extends AppCompatActivity {
 
       @Override
       public void onClick(View v) {
-        onFalseButtonClicked(v);
+        onFalseButtonClicked();
       }
     });
 
@@ -78,7 +80,7 @@ public class QuestionActivity extends AppCompatActivity {
 
       @Override
       public void onClick(View v) {
-        onNextButtonClicked(v);
+        onNextButtonClicked();
       }
     });
 
@@ -86,14 +88,31 @@ public class QuestionActivity extends AppCompatActivity {
 
       @Override
       public void onClick(View v) {
-        onCheatButtonClicked(v);
+        onCheatButtonClicked();
       }
     });
   }
 
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    super.onActivityResult(requestCode, resultCode, intent);
+
+    if(requestCode == CHEAT_REQUEST) {
+      if(resultCode == RESULT_OK) {
+        boolean answerCheated =
+            intent.getBooleanExtra(CheatActivity.EXTRA_CHEATED, false);
+
+        if(answerCheated) {
+          onNextButtonClicked();
+        }
+      }
+    }
+  }
+
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
-  private void onTrueButtonClicked(View v) {
+  private void onTrueButtonClicked() {
 
 //    if(nextButtonEnabled) {
 //      return;
@@ -116,7 +135,7 @@ public class QuestionActivity extends AppCompatActivity {
 
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
-  private void onFalseButtonClicked(View v) {
+  private void onFalseButtonClicked() {
 
 //    if(nextButtonEnabled) {
 //      return;
@@ -137,14 +156,16 @@ public class QuestionActivity extends AppCompatActivity {
   }
 
   //TODO: implementar boton para pasar a siguiente pantalla
-  private void onCheatButtonClicked(View v) {
+  private void onCheatButtonClicked() {
     Intent intent = new Intent(this, CheatActivity.class);
-    startActivity(intent);
+    intent.putExtra(CheatActivity.EXTRA_ANSWER, replyArray[questionIndex]);
+    //startActivity(intent);
+    startActivityForResult(intent, CHEAT_REQUEST);
   }
 
   //TODO: impedir que podamos hacer click en el boton
   // si aun no hemos contestado a la pregunta
-  private void onNextButtonClicked(View v) {
+  private void onNextButtonClicked() {
 
 //    if(!nextButtonEnabled) {
 //      return;
