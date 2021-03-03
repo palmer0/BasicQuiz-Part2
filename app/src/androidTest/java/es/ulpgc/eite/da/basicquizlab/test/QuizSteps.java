@@ -17,6 +17,7 @@ import es.ulpgc.eite.da.basicquizlab.QuestionActivity;
 import es.ulpgc.eite.da.basicquizlab.R;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -115,7 +116,6 @@ public class QuizSteps {
     onView(withId(R.id.nextButton)).check(matches(isEnabled()));
   }
 
-  /*
 
   @And("^ocultar respuesta$")
   public void ocultarRespuesta() {
@@ -190,6 +190,5 @@ public class QuizSteps {
     //getInstrumentation().waitForIdleSync();
     pressBack();
   }
-  */
 
 }
