@@ -48,6 +48,11 @@ public class QuestionActivity extends AppCompatActivity {
   private void initLayoutContent() {
     questionText.setText(questionArray[questionIndex]);
     replyText.setText(R.string.empty_text);
+
+//    falseButton.setEnabled(true);
+//    trueButton.setEnabled(true);
+//    cheatButton.setEnabled(true);
+//    nextButton.setEnabled(false);
   }
 
   private void enableLayoutButtons() {
