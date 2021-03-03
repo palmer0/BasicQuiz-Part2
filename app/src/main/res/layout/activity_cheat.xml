@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="es.ulpgc.eite.da.basicquizlab.CheatActivity">
+
+
 
     <TextView
-        android:id="@+id/questionText"
+        android:id="@+id/warningText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="@string/empty_text"
+        android:text="@string/warning_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Question" />
+        tools:text="Warning" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -26,13 +29,13 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionText">
+        app:layout_constraintTop_toBottomOf="@+id/warningText">
 
         <Button
-            android:id="@+id/trueButton"
+            android:id="@+id/yesButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/true_button_text"
+            android:text="@string/yes_button_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Space
@@ -41,15 +44,15 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/falseButton"
+            android:id="@+id/noButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/false_button_text"
+            android:text="@string/no_button_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/replyText"
+        android:id="@+id/answerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -58,40 +61,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:text="Reply" />
+        tools:text="Answer" />
 
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/replyText">
 
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next_button_text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Next" />
-
-        <Space
-            android:visibility="gone"
-            android:layout_width="36dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/cheatButton"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cheat_button_text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Cheat" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
