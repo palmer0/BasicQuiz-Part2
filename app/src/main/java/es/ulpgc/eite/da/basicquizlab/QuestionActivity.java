@@ -15,7 +15,7 @@ public class QuestionActivity extends AppCompatActivity {
   private String[] questionArray;
   private int questionIndex=0;
   private int[] replyArray;
-  private boolean nextButtonEnabled;
+  //private boolean nextButtonEnabled;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +49,10 @@ public class QuestionActivity extends AppCompatActivity {
     questionText.setText(questionArray[questionIndex]);
     replyText.setText(R.string.empty_text);
 
-//    falseButton.setEnabled(true);
-//    trueButton.setEnabled(true);
-//    cheatButton.setEnabled(true);
-//    nextButton.setEnabled(false);
+    falseButton.setEnabled(true);
+    trueButton.setEnabled(true);
+    cheatButton.setEnabled(true);
+    nextButton.setEnabled(false);
   }
 
   private void enableLayoutButtons() {
@@ -94,9 +94,9 @@ public class QuestionActivity extends AppCompatActivity {
   // si ya hemos contestado a la pregunta
   private void onTrueButtonClicked(View v) {
 
-    if(nextButtonEnabled) {
-      return;
-    }
+//    if(nextButtonEnabled) {
+//      return;
+//    }
 
     if(replyArray[questionIndex] == 1) {
       replyText.setText(R.string.correct_text);
@@ -104,7 +104,12 @@ public class QuestionActivity extends AppCompatActivity {
       replyText.setText(R.string.incorrect_text);
     }
 
-    nextButtonEnabled = true;
+    //nextButtonEnabled = true;
+
+    falseButton.setEnabled(false);
+    trueButton.setEnabled(false);
+    cheatButton.setEnabled(false);
+    nextButton.setEnabled(true);
   }
 
 
@@ -112,9 +117,9 @@ public class QuestionActivity extends AppCompatActivity {
   // si ya hemos contestado a la pregunta
   private void onFalseButtonClicked(View v) {
 
-    if(nextButtonEnabled) {
-      return;
-    }
+//    if(nextButtonEnabled) {
+//      return;
+//    }
 
     if(replyArray[questionIndex] == 0) {
       replyText.setText(R.string.correct_text);
@@ -122,7 +127,12 @@ public class QuestionActivity extends AppCompatActivity {
       replyText.setText(R.string.incorrect_text);
     }
 
-    nextButtonEnabled = true;
+    //nextButtonEnabled = true;
+
+    falseButton.setEnabled(false);
+    trueButton.setEnabled(false);
+    cheatButton.setEnabled(false);
+    nextButton.setEnabled(true);
   }
 
   //TODO: implementar boton para pasar a siguiente pantalla
@@ -134,11 +144,11 @@ public class QuestionActivity extends AppCompatActivity {
   // si aun no hemos contestado a la pregunta
   private void onNextButtonClicked(View v) {
 
-    if(!nextButtonEnabled) {
-      return;
-    }
+//    if(!nextButtonEnabled) {
+//      return;
+//    }
 
-    nextButtonEnabled = false;
+    //nextButtonEnabled = false;
     questionIndex++;
 
     // si queremos que el quiz acabe al llegar
