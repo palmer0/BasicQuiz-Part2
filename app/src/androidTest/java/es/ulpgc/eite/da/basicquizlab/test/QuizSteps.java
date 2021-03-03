@@ -20,8 +20,10 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isEnabled;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.not;
 
 @SuppressWarnings("ALL")
 public class QuizSteps {
@@ -87,15 +89,6 @@ public class QuizSteps {
     onView(withId(R.id.nextButton)).perform(click());
   }
 
-  /*
-
-  @And("^ocultar respuesta$")
-  public void ocultarRespuesta() {
-    //onView(withId(R.id.answerText)).check(matches(isDisplayed()));
-    //onView(withId(R.id.answerText)).check(matches(withText("???")));
-    onView(withId(R.id.answerText))
-        .check(matches(withText(activity.getString(R.string.empty_text))));
-  }
 
   @And("^mostrar botones True y False y Cheat activados$")
   public void mostrarBotonesTrueYFalseYCheatActivados() {
@@ -121,6 +114,17 @@ public class QuizSteps {
   public void mostrarBotonNextActivado() {
     onView(withId(R.id.nextButton)).check(matches(isEnabled()));
   }
+
+  /*
+
+  @And("^ocultar respuesta$")
+  public void ocultarRespuesta() {
+    //onView(withId(R.id.answerText)).check(matches(isDisplayed()));
+    //onView(withId(R.id.answerText)).check(matches(withText("???")));
+    onView(withId(R.id.answerText))
+        .check(matches(withText(activity.getString(R.string.empty_text))));
+  }
+
 
   @When("^pulsar boton Cheat$")
   public void pulsarBotonCheat() {
