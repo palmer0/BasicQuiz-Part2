@@ -17,11 +17,14 @@ import es.ulpgc.eite.da.basicquizlab.QuestionActivity;
 import es.ulpgc.eite.da.basicquizlab.R;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isEnabled;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.not;
 
 @SuppressWarnings("ALL")
 public class QuizSteps {
@@ -87,7 +90,6 @@ public class QuizSteps {
     onView(withId(R.id.nextButton)).perform(click());
   }
 
-  /*
 
   @And("^ocultar respuesta$")
   public void ocultarRespuesta() {
@@ -186,6 +188,5 @@ public class QuizSteps {
     //getInstrumentation().waitForIdleSync();
     pressBack();
   }
-  */
 
 }
