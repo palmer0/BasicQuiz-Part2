@@ -69,12 +69,23 @@ public class CheatActivity extends AppCompatActivity {
 
   }
 
-  private void onNoButtonClicked(View v) {
-    answerCheated = false;
+  @Override
+  public void onBackPressed() {
+    //super.onBackPressed();
 
     Intent intent = new Intent();
     intent.putExtra(EXTRA_CHEATED, answerCheated);
     setResult(RESULT_OK, intent);
+
+    super.onBackPressed();
+  }
+
+  private void onNoButtonClicked(View v) {
+    answerCheated = false;
+
+//    Intent intent = new Intent();
+//    intent.putExtra(EXTRA_CHEATED, answerCheated);
+//    setResult(RESULT_OK, intent);
 
     finish();
   }
@@ -88,9 +99,9 @@ public class CheatActivity extends AppCompatActivity {
       answerText.setText(R.string.false_text);
     }
 
-    Intent intent = new Intent();
-    intent.putExtra(EXTRA_CHEATED, answerCheated);
-    setResult(RESULT_OK, intent);
+//    Intent intent = new Intent();
+//    intent.putExtra(EXTRA_CHEATED, answerCheated);
+//    setResult(RESULT_OK, intent);
   }
 
 }
