@@ -24,6 +24,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentedTest {
 
+
   @Rule
   public ActivityTestRule<MainActivity> mActivityTestRule =
       new ActivityTestRule<>(MainActivity.class);
