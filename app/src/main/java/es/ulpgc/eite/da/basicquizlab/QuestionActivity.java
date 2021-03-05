@@ -126,6 +126,8 @@ public class QuestionActivity extends AppCompatActivity {
         QuestionActivity.this,
         CheatActivity.class
     );
+
+    intent.putExtra(CheatActivity.EXTRA_ANSWER, replyArray[questionIndex]);
     startActivity(intent);
   }
 

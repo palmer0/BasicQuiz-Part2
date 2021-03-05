@@ -9,14 +9,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CheatActivity extends AppCompatActivity {
 
+  public final static String EXTRA_ANSWER = "ANSWER";
+  //public final static String EXTRA_CHEATED = "EXTRA_CHEATED";
+
   private TextView answerText;
   private Button yesButton, noButton;
+  private int currentAnswer;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_cheat);
     getSupportActionBar().setTitle(R.string.cheat_title);
+
+
 
     initLayoutData();
     linkLayoutComponents();
@@ -25,7 +31,8 @@ public class CheatActivity extends AppCompatActivity {
   }
 
   private void initLayoutData() {
-    // TODO: falta implementacion
+    // 0 = false, 1 = true
+    currentAnswer= getIntent().getIntExtra(EXTRA_ANSWER, -1);
   }
 
   private void linkLayoutComponents() {
