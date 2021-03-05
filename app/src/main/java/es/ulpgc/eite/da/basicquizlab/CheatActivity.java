@@ -67,10 +67,15 @@ public class CheatActivity extends AppCompatActivity {
   }
 
   private void onNoButtonClicked(View v) {
-
+    finish();
   }
 
   private void onYesButtonClicked(View v) {
+    if(currentAnswer == 1) {
+      answerText.setText(R.string.true_text);
+    } else {
+      answerText.setText(R.string.false_text);
+    }
 
   }
 
