@@ -1,5 +1,6 @@
 package es.ulpgc.eite.da.basicquizlab;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,6 @@ public class QuestionActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_question);
-
     getSupportActionBar().setTitle(R.string.question_title);
 
     initLayoutData();
@@ -121,7 +121,12 @@ public class QuestionActivity extends AppCompatActivity {
 
   //TODO: implementar boton para pasar a siguiente pantalla
   private void onCheatButtonClicked(View v) {
-    // no implementado
+
+    Intent intent = new Intent(
+        QuestionActivity.this,
+        CheatActivity.class
+    );
+    startActivity(intent);
   }
 
   //TODO: impedir que podamos hacer click en el boton
