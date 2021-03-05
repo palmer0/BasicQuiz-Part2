@@ -21,7 +21,7 @@ public class QuestionActivity extends AppCompatActivity {
   private String[] questionArray;
   private int questionIndex=0;
   private int[] replyArray;
-  private boolean nextButtonEnabled;
+  //private boolean nextButtonEnabled;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,11 @@ public class QuestionActivity extends AppCompatActivity {
   private void initLayoutContent() {
     questionText.setText(questionArray[questionIndex]);
     replyText.setText(R.string.empty_text);
+
+    cheatButton.setEnabled(true);
+    trueButton.setEnabled(true);
+    falseButton.setEnabled(true);
+    nextButton.setEnabled(false);
   }
 
   private void enableLayoutButtons() {
@@ -94,9 +99,9 @@ public class QuestionActivity extends AppCompatActivity {
   // si ya hemos contestado a la pregunta
   private void onTrueButtonClicked() {
 
-    if(nextButtonEnabled) {
-      return;
-    }
+//    if(nextButtonEnabled) {
+//      return;
+//    }
 
     if(replyArray[questionIndex] == 1) {
       replyText.setText(R.string.correct_text);
@@ -104,16 +109,17 @@ public class QuestionActivity extends AppCompatActivity {
       replyText.setText(R.string.incorrect_text);
     }
 
-    nextButtonEnabled = true;
+    //TODO: cambiar estado botones
+    //nextButtonEnabled = true;
   }
 
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
   private void onFalseButtonClicked() {
 
-    if(nextButtonEnabled) {
-      return;
-    }
+//    if(nextButtonEnabled) {
+//      return;
+//    }
 
     if(replyArray[questionIndex] == 0) {
       replyText.setText(R.string.correct_text);
@@ -121,7 +127,8 @@ public class QuestionActivity extends AppCompatActivity {
       replyText.setText(R.string.incorrect_text);
     }
 
-    nextButtonEnabled = true;
+    //TODO: cambiar estado botones
+    //nextButtonEnabled = true;
   }
 
   @Override
@@ -137,7 +144,7 @@ public class QuestionActivity extends AppCompatActivity {
         Log.d("QuestionActivity", (answerCheated ? "True" : "False" ));
 
         if(answerCheated) {
-          nextButtonEnabled = true;
+          //nextButtonEnabled = true;
           onNextButtonClicked();
         }
       }
@@ -160,11 +167,12 @@ public class QuestionActivity extends AppCompatActivity {
   // si aun no hemos contestado a la pregunta
   private void onNextButtonClicked() {
 
-    if(!nextButtonEnabled) {
-      return;
-    }
+//    if(!nextButtonEnabled) {
+//      return;
+//    }
 
-    nextButtonEnabled = false;
+    //TODO: cambiar estado botones
+    //nextButtonEnabled = false;
     questionIndex++;
 
     Log.d("QuestionActivity", "index: " + questionIndex );

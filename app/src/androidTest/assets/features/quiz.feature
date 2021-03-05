@@ -6,12 +6,12 @@ Feature: Quiz
     Given iniciar pantalla Question
     And mostrar pregunta "<question>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
     When pulsar boton "<button>"
     Then mostrar resultado "<result>" a respuesta "<answer>"
-    #And mostrar botones True y False y Cheat desactivados
-    #And mostrar boton Next activado
+    And mostrar botones True y False y Cheat desactivados
+    And mostrar boton Next activado
 
     Examples:
       | question           | button | answer | result    |
@@ -25,8 +25,8 @@ Feature: Quiz
     Given iniciar pantalla Question
     And mostrar pregunta "<question>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
     When pulsar boton Cheat
     Then iniciar pantalla Cheat
     And mostrar mensaje Warning
@@ -45,20 +45,20 @@ Feature: Quiz
     Given iniciar pantalla Question
     And mostrar pregunta "<question>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
     And pulsar boton Cheat
     And iniciar pantalla Cheat
     And mostrar mensaje Warning
     And ocultar respuesta
-    #And mostrar botones Yes y No activados
+    And mostrar botones Yes y No activados
     When pulsar boton No
     Then finalizar pantalla Cheat
     And resumir pantalla Question
     And mostrar pregunta "<question>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
 
     Examples:
       | question          |
@@ -71,16 +71,16 @@ Feature: Quiz
     Given iniciar pantalla Question
     And mostrar pregunta "<question>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
     And pulsar boton Cheat
     And iniciar pantalla Cheat
     And mostrar mensaje Warning
     And ocultar respuesta
-    #And mostrar botones Yes y No activados
+    And mostrar botones Yes y No activados
     When pulsar boton Yes
     Then mostrar respuesta "<answer>" a pregunta "<question>"
-    #And mostrar botones Yes y No desactivados
+    And mostrar botones Yes y No desactivados
     And pulsar boton Back
 
     Examples:
@@ -94,23 +94,23 @@ Feature: Quiz
     Given iniciar pantalla Question
     And mostrar pregunta "<question1>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
     And pulsar boton Cheat
     And iniciar pantalla Cheat
     And mostrar mensaje Warning
     And ocultar respuesta
-    #And mostrar botones Yes y No activados
+    And mostrar botones Yes y No activados
     And pulsar boton Yes
-    #And mostrar botones Yes y No desactivados
+    And mostrar botones Yes y No desactivados
     And mostrar respuesta "<answer>" a pregunta "<question1>"
     When pulsar boton Back
     Then finalizar pantalla Cheat
     And resumir pantalla Question
     And mostrar pregunta "<question2>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
 
     Examples:
       | question1         | answer | question2          |
@@ -123,17 +123,17 @@ Feature: Quiz
     Given iniciar pantalla Question
     And mostrar pregunta "<question1>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
     And pulsar boton "<button>"
     And mostrar resultado "<result>" a respuesta "<answer>"
-    #And mostrar botones True y False y Cheat desactivados
-    #And mostrar boton Next activado
+    And mostrar botones True y False y Cheat desactivados
+    And mostrar boton Next activado
     When pulsar boton Next
     Then mostrar pregunta "<question2>"
     And ocultar resultado
-    #And mostrar botones True y False y Cheat activados
-    #And mostrar boton Next desactivado
+    And mostrar botones True y False y Cheat activados
+    And mostrar boton Next desactivado
 
     Examples:
       | question1         | button  | answer  | result    | question2          |
