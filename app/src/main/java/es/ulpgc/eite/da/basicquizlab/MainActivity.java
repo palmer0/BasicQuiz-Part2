@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
     });
   }
 
+
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
   private void onTrueButtonClicked(View v) {
