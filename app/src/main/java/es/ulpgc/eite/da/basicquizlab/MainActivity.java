@@ -86,6 +86,21 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
+  public void onButtonClicked(View view) {
+
+    switch (view.getId()) {
+      case R.id.falseButton:
+        onFalseButtonClicked(view);
+      case R.id.trueButton:
+        onTrueButtonClicked(view);
+      case R.id.nextButton:
+        onNextButtonClicked(view);
+      case R.id.cheatButton:
+        onCheatButtonClicked(view);
+    }
+
+  }
+
   //TODO: impedir que podamos hacer click en el boton
   // si ya hemos contestado a la pregunta
   private void onTrueButtonClicked(View v) {
