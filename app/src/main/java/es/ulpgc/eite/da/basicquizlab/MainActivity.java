@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
   private Button falseButton, trueButton,cheatButton, nextButton;
-  private TextView questionText, replyText;
+  private TextView questionText, resultText;
 
   private String[] questionArray;
-  private int questionIndex=0;
-  private int[] replyArray;
+  private int quizIndex =0;
+  private int[] answerArray;
   private boolean nextButtonEnabled;
 
   @Override
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void initLayoutData() {
     questionArray=getResources().getStringArray(R.array.question_array);
-    replyArray=getResources().getIntArray(R.array.reply_array);
+    answerArray =getResources().getIntArray(R.array.answer_array);
   }
 
   private void linkLayoutComponents() {
@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
     nextButton = findViewById(R.id.nextButton);
 
     questionText = findViewById(R.id.questionText);
-    replyText = findViewById(R.id.replyText);
+    resultText = findViewById(R.id.resultText);
   }
 
   private void initLayoutContent() {
-    questionText.setText(questionArray[questionIndex]);
-    replyText.setText(R.string.empty_text);
+    questionText.setText(questionArray[quizIndex]);
+    resultText.setText(R.string.empty_text);
   }
 
   private void enableLayoutButtons() {
@@ -94,10 +94,10 @@ public class MainActivity extends AppCompatActivity {
       return;
     }
 
-    if(replyArray[questionIndex] == 1) {
-      replyText.setText(R.string.correct_text);
+    if(answerArray[quizIndex] == 1) {
+      resultText.setText(R.string.correct_text);
     } else {
-      replyText.setText(R.string.incorrect_text);
+      resultText.setText(R.string.incorrect_text);
     }
 
     nextButtonEnabled = true;
@@ -111,10 +111,10 @@ public class MainActivity extends AppCompatActivity {
       return;
     }
 
-    if(replyArray[questionIndex] == 0) {
-      replyText.setText(R.string.correct_text);
+    if(answerArray[quizIndex] == 0) {
+      resultText.setText(R.string.correct_text);
     } else {
-      replyText.setText(R.string.incorrect_text);
+      resultText.setText(R.string.incorrect_text);
     }
 
     nextButtonEnabled = true;
@@ -134,13 +134,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     nextButtonEnabled = false;
-    questionIndex++;
+    quizIndex++;
 
     // si queremos que el quiz acabe al llegar
     // a la ultima pregunta debemos comentar esta linea
     checkIndexData();
 
-    if(questionIndex < questionArray.length) {
+    if(quizIndex < questionArray.length) {
       initLayoutContent();
     }
   }
@@ -151,8 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
     // hacemos que si llegamos al final del quiz
     // volvamos a empezarlo nuevamente
-    if(questionIndex == questionArray.length) {
-      questionIndex=0;
+    if(quizIndex == questionArray.length) {
+      quizIndex =0;
     }
   }
 }

@@ -61,7 +61,7 @@ public class QuizSteps {
     //onView(withId(R.id.replyText)).check(matches(not(isDisplayed())));
     //onView(withId(R.id.replyText)).check(matches(isDisplayed()));
     //onView(withId(R.id.replyText)).check(matches(withText("???")));
-    onView(withId(R.id.replyText))
+    onView(withId(R.id.resultText))
         .check(matches(withText(activity.getString(R.string.empty_text))));
   }
 
@@ -77,8 +77,8 @@ public class QuizSteps {
 
   @Then("^mostrar resultado \"([^\"]*)\" a respuesta \"([^\"]*)\"$")
   public void mostrarResultadoARespuesta(String r, String a) {
-    onView(withId(R.id.replyText)).check(matches(isDisplayed()));
-    onView(withId(R.id.replyText)).check(matches(withText(r)));
+    onView(withId(R.id.resultText)).check(matches(isDisplayed()));
+    onView(withId(R.id.resultText)).check(matches(withText(r)));
   }
 
   @When("^pulsar boton Next$")

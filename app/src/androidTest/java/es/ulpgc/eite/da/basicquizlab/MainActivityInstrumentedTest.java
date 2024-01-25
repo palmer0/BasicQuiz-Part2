@@ -47,7 +47,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView = onView(withId(R.id.questionText));
     textView.check(matches(withText(questionArray[0])));
 
-    ViewInteraction textView2 = onView(withId(R.id.replyText));
+    ViewInteraction textView2 = onView(withId(R.id.resultText));
     textView2.check(matches(withText(emptyText)));
 
     // WHEN
@@ -60,7 +60,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView3 = onView(withId(R.id.questionText));
     textView3.check(matches(withText(questionArray[0])));
 
-    ViewInteraction textView4 = onView(withId(R.id.replyText));
+    ViewInteraction textView4 = onView(withId(R.id.resultText));
     textView4.check(matches(withText(correctText)));
 
     // ------------------------
@@ -75,7 +75,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView5 = onView(withId(R.id.questionText));
     textView5.check(matches(withText(questionArray[1])));
 
-    ViewInteraction textView6 = onView(withId(R.id.replyText));
+    ViewInteraction textView6 = onView(withId(R.id.resultText));
     textView6.check(matches(withText(emptyText)));
 
     // ------------------------
@@ -91,7 +91,7 @@ public class MainActivityInstrumentedTest {
     textView7.check(matches(withText(questionArray[1])));
 
 
-    ViewInteraction textView8 = onView(withId(R.id.replyText));
+    ViewInteraction textView8 = onView(withId(R.id.resultText));
     textView8.check(matches(withText(emptyText)));
 
     // ------------------------
@@ -108,7 +108,7 @@ public class MainActivityInstrumentedTest {
     textView9.check(matches(withText(questionArray[1])));
 
 
-    ViewInteraction textView11 = onView(withId(R.id.replyText));
+    ViewInteraction textView11 = onView(withId(R.id.resultText));
     textView11.check(matches(withText(incorrectText)));
 
     // ------------------------
@@ -124,7 +124,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView12 = onView(withId(R.id.questionText));
     textView12.check(matches(withText(questionArray[1])));
 
-    ViewInteraction textView13 = onView(withId(R.id.replyText));
+    ViewInteraction textView13 = onView(withId(R.id.resultText));
     textView13.check(matches(withText(incorrectText)));
 
 
@@ -141,7 +141,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView14 = onView(withId(R.id.questionText));
     textView14.check(matches(withText(questionArray[1])));
 
-    ViewInteraction textView15 = onView(withId(R.id.replyText));
+    ViewInteraction textView15 = onView(withId(R.id.resultText));
     textView15.check(matches(withText(incorrectText)));
 
 
@@ -158,7 +158,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView16 = onView(withId(R.id.questionText));
     textView16.check(matches(withText(questionArray[2])));
 
-    ViewInteraction textView17 = onView(withId(R.id.replyText));
+    ViewInteraction textView17 = onView(withId(R.id.resultText));
     textView17.check(matches(withText(emptyText)));
 
 
@@ -175,7 +175,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView18 = onView(withId(R.id.questionText));
     textView18.check(matches(withText(questionArray[2])));
 
-    ViewInteraction textView19 = onView(withId(R.id.replyText));
+    ViewInteraction textView19 = onView(withId(R.id.resultText));
     textView19.check(matches(withText(incorrectText)));
 
 
@@ -192,7 +192,7 @@ public class MainActivityInstrumentedTest {
     ViewInteraction textView20 = onView(withId(R.id.questionText));
     textView20.check(matches(withText(questionArray[0])));
 
-    ViewInteraction textView21 = onView(withId(R.id.replyText));
+    ViewInteraction textView21 = onView(withId(R.id.resultText));
     textView21.check(matches(withText(emptyText)));
   }
 

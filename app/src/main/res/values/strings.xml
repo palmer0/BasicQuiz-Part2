@@ -20,7 +20,7 @@
         <item>Question #3: True</item>
     </string-array>
 
-    <integer-array name="reply_array">
+    <integer-array name="answer_array">
         <item>1</item>
         <item>0</item>
         <item>1</item>
