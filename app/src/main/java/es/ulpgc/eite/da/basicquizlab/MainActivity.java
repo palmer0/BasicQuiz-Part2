@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     initLayoutData();
     linkLayoutComponents();
     initLayoutContent();
-    enableLayoutButtons();
   }
 
   private void initLayoutData() {
@@ -50,45 +49,23 @@ public class MainActivity extends AppCompatActivity {
     resultText.setText(R.string.empty_text);
   }
 
-  private void enableLayoutButtons() {
-
-    trueButton.setOnClickListener(new View.OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        onTrueButtonClicked(v);
-      }
-    });
-
-    falseButton.setOnClickListener(new View.OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        onFalseButtonClicked(v);
-      }
-    });
-
-    nextButton.setOnClickListener(new View.OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        onNextButtonClicked(v);
-      }
-    });
-
-    cheatButton.setOnClickListener(new View.OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        onCheatButtonClicked(v);
-      }
-    });
-  }
 
 
   public void onButtonClicked(View view) {
 
-    switch (view.getId()) {
+    int viewId = view.getId();
+
+    if (viewId == trueButton.getId()) {
+      onTrueButtonClicked(view);
+    } else if (viewId == falseButton.getId()) {
+      onFalseButtonClicked(view);
+    } else if (viewId == nextButton.getId()) {
+      onNextButtonClicked(view);
+    } else {
+      onCheatButtonClicked(view);
+    }
+
+    /*switch (viewId) {
       case R.id.falseButton:
         onFalseButtonClicked(view);
       case R.id.trueButton:
@@ -97,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         onNextButtonClicked(view);
       case R.id.cheatButton:
         onCheatButtonClicked(view);
-    }
+    }*/
 
   }
 
