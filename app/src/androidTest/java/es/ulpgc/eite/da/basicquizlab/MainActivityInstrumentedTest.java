@@ -1,6 +1,12 @@
 package es.ulpgc.eite.da.basicquizlab;
 
 
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
 import android.content.Context;
 
 import androidx.test.espresso.ViewInteraction;
@@ -12,12 +18,6 @@ import androidx.test.runner.AndroidJUnit4;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 @SuppressWarnings("ALL")
 @LargeTest
@@ -37,11 +37,15 @@ public class MainActivityInstrumentedTest {
     String[] questionArray = 
         appContext.getResources().getStringArray(R.array.question_array);
     
+    /*String correctText = appContext.getString(R.string.correct_text);
+    String incorrectText = appContext.getString(R.string.incorrect_text);
+    String emptyText = appContext.getString(R.string.empty_text);*/
+
     String correctText = appContext.getString(R.string.correct_text);
     String incorrectText = appContext.getString(R.string.incorrect_text);
     String emptyText = appContext.getString(R.string.empty_text);
-    
-    
+
+
     // GIVEN
 
     ViewInteraction textView = onView(withId(R.id.questionText));
